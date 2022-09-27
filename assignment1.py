@@ -59,5 +59,5 @@ if operator1 == '1' and operator2 == '1':
 else: 
     print('Bye')
 
-
+### if dividing by zero, print 'undefined' and ask for new integer.
 print("hello")
