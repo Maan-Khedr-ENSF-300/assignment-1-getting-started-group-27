@@ -1,4 +1,4 @@
-## A terminal based calculator application which prompts the user to enter a mathmematical expression htat includes three integer values and two operators.
+## A terminal based calculator application which prompts the user to enter a mathematical expression htat includes three integer values and two operators.
 ## 
 
 def myAdd(x, y, z):
