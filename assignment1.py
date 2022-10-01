@@ -1,18 +1,17 @@
 ## A terminal based calculator application which prompts the user to enter a mathematical expression htat includes three integer values and two operators.
 ## 
 
-def myAdd(x, y, z):
-    print(x, '+', y, '+', z, '=', x + y + z)
+def myAdd(x, y):
+    return(x + y)
     
-    
-def mySub(x, y, z):
-    return x - y -z
+def mySub(x, y):
+    return (x - y)
 
-def myMul(x, y, z):
-    return x * y * z
+def myMul(x,y):
+    return (x * y)
 
-def myDiv(x, y, z):
-    return x // y // z
+def myDiv(x, y):
+    return (x // y)
 
 
 
@@ -21,7 +20,7 @@ def myDiv(x, y, z):
 def input_int():
     while True:
         try:
-            x = int(input("Select an integer: "))
+            x = int(input("Enter an integer: "))
             return x
         except ValueError:
             print('\nPlease enter an integer only.\n')
@@ -53,11 +52,74 @@ c = input_int()
 print('\nc =', c)
 
 
-if operator1 == '1' and operator2 == '1':
-    print(a, '*', b, '*', c, '=', myMul(a, b, c))
+if (operator1 == '1'):
+    first_operation = myMul(a,b)
+    if (operator2 == '1'):
+        second_operation = myMul(first_operation,c)
+        print('Entered experssion =', a, '*', b, '*', c)
+    elif(operator2 == '2'):
+        econd_operation = myDiv(first_operation,c)
+        print('Entered experssion =', a, '*', b, '/', c)
+    elif(operator2 == '3'):
+        second_operation = myAdd(first_operation,c)
+        print('Entered experssion =', a, '*', b, '+', c)
+    elif(operator2 == '4'):
+        second_operation = mySub(first_operation,c)
+        print('Entered experssion =', a, '*', b, '-', c)
+
+if (operator1 == '2'):
+    first_operation = myDiv(a,b)
+    if (operator2 == '1'):
+        second_operation = myMul(first_operation,c)
+        print('Entered experssion =', a, '/', b, '*', c)
+    elif(operator2 == '2'):
+        econd_operation = myDiv(first_operation,c)
+        print('Entered experssion =', a, '/', b, '/', c)
+    elif(operator2 == '3'):
+        second_operation = myAdd(first_operation,c)
+        print('Entered experssion =', a, '/', b, '+', c)
+    elif(operator2 == '4'):
+        second_operation = mySub(first_operation,c)
+        print('Entered experssion =', a, '/', b, '-', c)
+    
+if (operator1 == '3'):
+    if (operator2 == '1'): 
+        first_operation = myMul(b,c)
+        second_operation = myAdd(a,first_operation)
+        print('Entered experssion =', a, '+', b, '*', c)
+    elif(operator2 == '2'):
+        first_operation = myDiv(b,c)
+        second_operation = myAdd(a,first_operation)
+        print('Entered experssion =', a, '+', b, '/', c)
+    elif(operator2 == '3'):
+        first_operation= myAdd(a,b)
+        second_operation = myAdd(first_operation,c)
+        print('Entered experssion =', a, '+', b, '+', c)
+    elif(operator2 == '4'):
+        first_operation= myAdd(a,b)
+        second_operation = mySub(first_operation,c)
+        print('Entered experssion =', a, '+', b, '-', c)
+
+if (operator1 == '4'):
+    if (operator2 == '1'): 
+        first_operation = myMul(b,c)
+        second_operation = mySub(a,first_operation)
+        print('Entered experssion =', a, '-', b, '*', c)
+    elif(operator2 == '2'):
+        first_operation = myDiv(b,c)
+        second_operation = mySub(a,first_operation)
+        print('Entered experssion =', a, '-', b, '/', c)
+    elif(operator2 == '3'):
+        first_operation= mySub(a,b)
+        second_operation = myAdd(first_operation,c)
+        print('Entered experssion =', a, '-', b, '+', c)
+    elif(operator2 == '4'):
+        first_operation= mySub(a,b)
+        second_operation = mySub(first_operation,c)
+        print('Entered experssion =', a, '-', b, '-', c)
 
 else: 
     print('Bye')
 
 ### if dividing by zero, print 'undefined' and ask for new integer.
-print("hello")
+print('Answer of the operation =', second_operation)
