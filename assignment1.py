@@ -28,6 +28,7 @@ def input_int():
             
 
 
+## This function validates operator input
 def input_op(x):
     while x not in {'*', '/', '+', '-'}:
         x = input("\n\nSelection invalid. Choose an operator from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
