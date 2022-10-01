@@ -1,4 +1,4 @@
-## A terminal based calculator application which prompts the user to enter a mathematical expression htat includes three integer values and two operators.
+## A terminal based calculator application which prompts the user to enter a mathematical expression that includes three integer values and two operators.
 ## 
 
 
@@ -30,7 +30,7 @@ def input_int():
 
 def input_op(x):
     while x not in {'*', '/', '+', '-'}:
-        x = input("\n\nSelection invalid. Choose a number from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
+        x = input("\n\nSelection invalid. Choose an operator from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
         return x
 
 
@@ -52,7 +52,7 @@ elif operator1 == '-':
     print('\nOperation 1: Subtract\n')
 
 b = input_int()
-print('\nb =', b)
+
 if operator1 == '2' and b == 0:  ### if dividing by zero, print 'undefined' and ask for new integer.
         b = int(input('Undefined. Select an integer greater than 0 for valid operation:\n'))
 print('\nb =', b)
