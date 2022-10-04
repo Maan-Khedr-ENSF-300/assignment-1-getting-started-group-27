@@ -1,7 +1,6 @@
 ## A terminal based calculator application which prompts the user to enter a mathematical expression htat includes three integer values and two operators.
 ## 
 
-<<<<<<< HEAD
 def myAdd(x, y):
     return(x + y)
     
@@ -13,20 +12,6 @@ def myMul(x,y):
 
 def myDiv(x, y):
     return (x // y)
-=======
-
-def myMul(x, y):
-    return x * y
-
-def myDiv(x, y):
-    return x // y
-
-def myAdd(x, y):
-    return x + y
-    
-def mySub(x, y):
-    return x - y
->>>>>>> 3156288955ed395c0926365ff1e11f7f337c9999
 
 
 
