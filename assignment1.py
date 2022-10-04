@@ -2,15 +2,47 @@
 ## 
 
 def myAdd(x, y):
+    '''
+    Add two integers together
+
+    Arguments:
+    x, y
+
+    returns the sum of two numbers received(integer)
+    '''
     return(x + y)
     
 def mySub(x, y):
+    '''
+    subtract two integers from each other
+
+    Arguments:
+    x, y
+
+    returns the answer of subtraction(integer)
+    '''
     return (x - y)
 
 def myMul(x,y):
+    '''
+    multiply two integers by each other
+
+    Arguments:
+    x, y
+
+    returns the answer of multipication(integer)
+    '''
     return (x * y)
 
 def myDiv(x, y):
+    '''
+    divide two integers by each other
+
+    Arguments:
+    x, y
+
+    returns the answer of division(integer)
+    '''
     return (x // y)
 
 
