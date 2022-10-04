@@ -40,15 +40,15 @@ a = input_int()
 print('\na =', a)
 
 operator1 = input("\nSelect an operator:\n*\t/\t+\t-\n")
-input_op(operator1)
-if operator1 == '*':
+input_op(operator1)                         
+if operator1 == '*':                            #first operation is multipication
     print('\nOperation 1: Multiply\n')
-elif operator1 == '/':
+elif operator1 == '/':                          #first operation is division 
     print('\nOperation 1: Divide\n')
-elif operator1 == '+':
-    print('\nOperation 1: Add\n')
-elif operator1 == '-':
-    print('\nOperation 1: Subtract\n')
+elif operator1 == '+':                          #first operation is adding
+    print('\nOperation 1: Add\n')               
+elif operator1 == '-':                          #first operation is subtracting
+    print('\nOperation 1: Subtract\n')          
 
 b = input_int()
 print('\nb =', b)
@@ -58,13 +58,13 @@ print('\nb =', b)
 
 operator2 = input("\nSelect an operator:\n*\t/\t+\t-\n")
 input_op(operator2)
-if operator2 == '*':
+if operator2 == '*':                              #second operation is multipication
     print('\nOperation 2: Multiply\n')
-elif operator2 == '/':
+elif operator2 == '/':                            #second operation is divison 
     print('\nOperation 2: Divide\n')
-elif operator2 == '+':
+elif operator2 == '+':                            #second operation is adding
     print('\nOperation 2: Add\n')
-elif operator2 == '-':
+elif operator2 == '-':                            #second operation is subtracting
     print('\nOperation 2: Subtract\n')
 
 c = input_int()
