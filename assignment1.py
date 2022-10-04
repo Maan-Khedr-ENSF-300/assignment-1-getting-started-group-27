@@ -1,6 +1,4 @@
 ### A terminal based calculator application which prompts the user to enter a mathematical expression that includes three integer values and two operators.
-
-
 def myMul(x, y):
     return x * y
 
@@ -14,12 +12,11 @@ def mySub(x, y):
     return x - y
 
 
-
 ## This function validates integer input
 def input_int():
     while True:
         try:
-            x = int(input("Select an integer: "))
+            x = int(input("Enter an integer: "))
             return x
         except ValueError:
             print('\nPlease enter an integer only.\n')
@@ -73,7 +70,6 @@ if operator2 == '2' and c == 0:     ### if dividing by zero, print 'undefined' a
 print('\nc =', c)
 
 
-
 if operator1 == '*' and operator2 == '*':
     print(a, '*', b, '*', c, '=', myMul(a, b, c))
 elif operator1 == '1' and operator2 == '/':
@@ -124,7 +120,3 @@ elif operator1 == '-' and operator2 == '+':
 elif operator1 == '-' and operator2 == '-':
         d = mySub(a, b)
         print(a, '-', b, '-', c, '=', mySub(d, c))
-
-
-
-
