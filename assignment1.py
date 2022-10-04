@@ -1,4 +1,4 @@
-## A terminal based calculator application which prompts the user to enter a mathematical expression htat includes three integer values and two operators.
+## A terminal based calculator application which prompts the user to enter a mathematical expression that includes three integer values and two operators.
 ## 
 
 def myAdd(x, y):
@@ -29,7 +29,7 @@ def input_int():
 
 def input_op(x):
     while x not in {'*', '/', '+', '-'}:
-        x = input("\n\nSelection invalid. Choose a number from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
+        x = input("\n\nSelection invalid. Choose an option from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
         return x
 
 
