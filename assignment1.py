@@ -1,4 +1,5 @@
-### A terminal based calculator application which prompts the user to enter a mathematical expression that includes three integer values and two operators.
+## A terminal based calculator application which prompts the user to enter a mathematical expression htat includes three integer values and two operators.
+## 
 
 def myAdd(x, y):
     return(x + y)
@@ -14,6 +15,7 @@ def myDiv(x, y):
 
 
 
+
 ## This function validates integer input
 def input_int():
     while True:
@@ -22,14 +24,13 @@ def input_int():
             return x
         except ValueError:
             print('\nPlease enter an integer only.\n')
+            
 
 
-## This function validates operator input
 def input_op(x):
     while x not in {'*', '/', '+', '-'}:
-        x = input("\n\nSelection invalid. Choose an operator from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
+        x = input("\n\nSelection invalid. Choose a number from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
         return x
-
 
 
 print("\nSelect three integers and 2 operators as requested.\n")
@@ -50,7 +51,7 @@ elif operator1 == '-':
     print('\nOperation 1: Subtract\n')
 
 b = input_int()
-
+print('\nb =', b)
 if operator1 == '2' and b == 0:  ### if dividing by zero, print 'undefined' and ask for new integer.
         b = int(input('Undefined. Select an integer greater than 0 for valid operation:\n'))
 print('\nb =', b)
@@ -123,4 +124,8 @@ elif operator1 == '-' and operator2 == '+':
 elif operator1 == '-' and operator2 == '-':
         d = mySub(a, b)
         print(a, '-', b, '-', c, '=', mySub(d, c))
+
+
+
+
 
