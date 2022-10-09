@@ -13,9 +13,6 @@ def myMul(x,y): ## a function that multiplies two integers to each other
 def myDiv(x, y): ## a function that divides an integer by another integer
     return (x // y)
 
-
-
-
 ## This function validates integer input
 def input_int():
     while True:
@@ -25,12 +22,69 @@ def input_int():
         except ValueError:
             print('\nPlease enter an integer only.\n')
             
-
 ## A function that validates user input for operator1 and operator2
 def input_op(x): 
     while x not in {'*', '/', '+', '-'}:
-        x = input("\n\nSelection invalid. Choose an option from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
-        return x
+        try:
+            x = input("\n\nSelection invalid. Choose an option from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
+            return x
+        except ValueError:
+            x = input("\n\nSelection invalid. Choose an option from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
+
+
+
+def calculator(x, y, z, op1, op2):
+    if op1 == '*' and op2 == '*': ## create an expression for x * y * z
+        print(x, '*', y, '*', z, '=', myMul(x, y, z))
+    elif op1 == '1' and op2 == '/':  ## create an expression for x * y / z
+            d = myMul(x, y)
+            print(x, '*', y, '/', z, '=', myDiv(d, z))
+    elif op1 == '*' and op2 == '+':  ## create an expression for x * y + z
+            d = myMul(x, y)
+            print(x, '*', y, '+', z, '=', myAdd(d, z))
+    elif op1 == '*' and op2 == '-':  ## create an expression for x * y - z
+            d = myMul(x, y)
+            print(x, '*', y, '-', z, '=', mySub(d, z))
+
+    elif op1 == '/' and op2 == '*':  ## create an expression for x / y * z
+            d = myMul(y, z)
+            print(x, '/', y, '*', z, '=', myDiv(x, d))
+    elif op1 == '/' and op2 == '/':     ## create an expression for x / y / z
+            d = myDiv(x, y)
+            print(x, '/', y, '/', z, '=', myDiv(d, z))
+    elif op1 == '/' and op2 == '+': ## create an expression for x / y + z
+            d = myDiv(x, y)
+            print(x, '/', y, '+', z, '=', myAdd(d, z))      
+    elif op1 == '/' and op2 == '-':     ## create an expression for x / y - z
+            d = myDiv(x, y)
+            print(x, '/', y, '-', z, '=', mySub(d, z))  
+
+    elif op1 == '+' and op2 == '*':## create an expression for x + y * z
+            d = myMul(y, z)
+            print(x, '+', y, '*', z, '=', myAdd(x, d))  
+    elif op1 == '+' and op2 == '/': ## create an expression for x + y / z
+            d = myDiv(y, z)
+            print(x, '+', y, '/', z, '=', myAdd(x, d))
+    elif op1 == '+' and op2 == '+': ## create an expression for x + y + z
+            d = myAdd(y, z)
+            print(x, '+', y, '+', z, '=', myAdd(x, d))
+    elif op1 == '+' and op2 == '-': ## create an expression for x + y - z
+            d = mySub(y, z)
+            print(x, '+', y, '-', z, '=', myAdd(x, d))
+
+    elif op1 == '-' and op2 == '*': ## create an expression for x - y * z
+            d = myMul(y, z)
+            print(x, '-', y, '*', z, '=', mySub(x, d))
+    elif op1 == '-' and op2 == '/': ## create an expression for x - y / z
+            d = myDiv(y, z)
+            print(x, '-', y, '/', z, '=', mySub(x, d))
+    elif op1 == '-' and op2 == '+':  ## create an expression for x - y + z
+            d = mySub(x, y)
+            print(x, '-', y, '+', z, '=', myAdd(d, z))
+    elif op1 == '-' and op2 == '-':  ## create an expression for x - y - z
+            d = mySub(x, y)
+            print(x, '-', y, '-', z, '=', mySub(d, z))
+           
 
 def main():
     print("\nSelect three integers and 2 operators as requested.\n")
@@ -52,9 +106,9 @@ def main():
 
     b = input_int() ## request user input for second integer
     print('\nb =', b) ## validate user input
-    if operator1 == '2' and b == 0:  ### if dividing by zero, print 'undefined' and ask for new integer.
+    while operator1 == '/' and b == 0:     ### if dividing by zero, print 'undefined' and ask for new integer.
             b = int(input('Undefined. Select an integer greater than 0 for valid operation:\n'))
-    print('\nb =', b)
+    
 
     operator2 = input("\nSelect an operator:\n*\t/\t+\t-\n") # requests user input for second operator
     input_op(operator2) ## validates user input
@@ -68,63 +122,13 @@ def main():
         print('\nOperation 2: Subtract\n')
 
     c = input_int() ## request user input for third integer
-    if operator2 == '2' and c == 0:     ### if dividing by zero, print 'undefined' and ask for new integer.
+    while operator2 == '/' and c == 0:     ### if dividing by zero, print 'undefined' and ask for new integer.
             c = int(input('Undefined. Select an integer greater than 0 for valid operation:\n'))
-    print('\nc =', c)
+    
 
 
 
-    if operator1 == '*' and operator2 == '*': ## create an expression for a * b * c
-        print(a, '*', b, '*', c, '=', myMul(a, b, c))
-    elif operator1 == '1' and operator2 == '/':  ## create an expression for a * b / c
-            d = myMul(a, b)
-            print(a, '*', b, '/', c, '=', myDiv(d, c))
-    elif operator1 == '*' and operator2 == '+':  ## create an expression for a * b + c
-            d = myMul(a, b)
-            print(a, '*', b, '+', c, '=', myAdd(d, c))
-    elif operator1 == '*' and operator2 == '-':  ## create an expression for a * b - c
-            d = myMul(a, b)
-            print(a, '*', b, '-', c, '=', mySub(d, c))
-
-    elif operator1 == '/' and operator2 == '*':  ## create an expression for a / b * c
-            d = myMul(b, c)
-            print(a, '/', b, '*', c, '=', myDiv(a, d))
-    elif operator1 == '/' and operator2 == '/':     ## create an expression for a / b / c
-            d = myDiv(a, b)
-            print(a, '/', b, '/', c, '=', myDiv(d, c))
-    elif operator1 == '/' and operator2 == '+': ## create an expression for a / b + c
-            d = myDiv(a, b)
-            print(a, '/', b, '+', c, '=', myAdd(d, c))      
-    elif operator1 == '/' and operator2 == '-':     ## create an expression for a / b - c
-            d = myDiv(a, b)
-            print(a, '/', b, '-', c, '=', mySub(d, c))  
-
-    elif operator1 == '+' and operator2 == '*':## create an expression for a + b * c
-            d = myMul(b, c)
-            print(a, '+', b, '*', c, '=', myAdd(a, d))  
-    elif operator1 == '+' and operator2 == '/': ## create an expression for a + b / c
-            d = myDiv(b, c)
-            print(a, '+', b, '/', c, '=', myAdd(a, d))
-    elif operator1 == '+' and operator2 == '+': ## create an expression for a + b + c
-            d = myAdd(b, c)
-            print(a, '+', b, '+', c, '=', myAdd(a, d))
-    elif operator1 == '+' and operator2 == '-': ## create an expression for a + b - c
-            d = mySub(b, c)
-            print(a, '+', b, '-', c, '=', myAdd(a, d))
-
-    elif operator1 == '-' and operator2 == '*': ## create an expression for a - b * c
-            d = myMul(b, c)
-            print(a, '-', b, '*', c, '=', mySub(a, d))
-    elif operator1 == '-' and operator2 == '/': ## create an expression for a - b / c
-            d = myDiv(b, c)
-            print(a, '-', b, '/', c, '=', mySub(a, d))
-    elif operator1 == '-' and operator2 == '+':  ## create an expression for a - b + c
-            d = mySub(a, b)
-            print(a, '-', b, '+', c, '=', myAdd(d, c))
-    elif operator1 == '-' and operator2 == '-':  ## create an expression for a - b - c
-            d = mySub(a, b)
-            print(a, '-', b, '-', c, '=', mySub(d, c))
-
+    calculator(a, b, c, operator1, operator2)
 
 if __name__ == '__main__':
     main()
