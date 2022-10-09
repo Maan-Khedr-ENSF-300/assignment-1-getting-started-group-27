@@ -2,15 +2,36 @@
 ## 
 
 def myAdd(x, y): ### a function that adds two integers
+    '''
+    Arguments: x, y 
+
+    returns the sum of x and y
+    '''
+
     return(x + y)
     
 def mySub(x, y): ### a function that subtracts an integer from another integer
+    '''
+    Arguments: x, y 
+
+    returns the answer of subtraction of x and y
+    '''
     return (x - y)
 
 def myMul(x,y): ## a function that multiplies two integers to each other
+    '''
+    Arguments: x, y 
+
+    returns the multipication of x and y
+    '''
     return (x * y)
 
 def myDiv(x, y): ## a function that divides an integer by another integer
+    '''
+    Arguments: x, y 
+
+    returns the division of x and y
+    '''
     return (x // y)
 
 ## This function validates integer input
