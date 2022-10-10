@@ -36,6 +36,11 @@ def myDiv(x, y): ## a function that divides an integer by another integer
 
 ## This function validates integer input
 def input_int():
+    '''
+    Arguments: None
+
+    returns the value of x
+    '''
     while True:
         try:
             x = int(input("Enter an integer: "))
@@ -45,6 +50,11 @@ def input_int():
             
 ## A function that validates user input for operator1 and operator2
 def input_op(x): 
+    '''
+    Arguments: x
+    
+    returns the value of x
+    '''
     while x not in {'*', '/', '+', '-'}:
         try:
             x = input("\n\nSelection invalid. Choose an option from the list. \n\nSelect an operator:\n*\t/\t+\t-\n")
@@ -55,6 +65,11 @@ def input_op(x):
 
 
 def calculator(x, y, z, op1, op2):
+    '''
+    Arguments: x, y, z, op1, op2
+    
+    returns the equation and answer
+    '''
     if op1 == '*' and op2 == '*': ## create an expression for x * y * z
         print(x, '*', y, '*', z, '=', myMul(x, y, z))
     elif op1 == '1' and op2 == '/':  ## create an expression for x * y / z
@@ -107,10 +122,6 @@ def calculator(x, y, z, op1, op2):
             print(x, '-', y, '-', z, '=', mySub(d, z))
 
 
-
-               
-            
-                
 
 def main():
     print("\nSelect three integers and 2 operators as requested.\n")
