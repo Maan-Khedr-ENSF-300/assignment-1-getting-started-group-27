@@ -144,7 +144,7 @@ def main():
     b = input_int() ## request user input for second integer
     print('\nb =', b) ## validate user input
     while operator1 == '/' and b == 0:     ### if dividing by zero, print 'undefined' and ask for new integer.
-            b = int(input('Undefined. Select an integer greater than 0 for valid operation:\n'))
+            b = int(input('Undefined. Select an integer that is not 0 for valid operation:\n'))
     
 
     operator2 = input("\nSelect an operator:\n*\t/\t+\t-\n") # requests user input for second operator
@@ -160,7 +160,7 @@ def main():
 
     c = input_int() ## request user input for third integer
     while operator2 == '/' and c == 0:     ### if dividing by zero, print 'undefined' and ask for new integer.
-            c = int(input('Undefined. Select an integer greater than 0 for valid operation:\n'))
+            c = int(input('Undefined. Select an integer that is not 0 for valid operation:\n'))
     
 
     calculator(a, b, c, operator1, operator2)
